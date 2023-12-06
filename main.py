@@ -92,7 +92,18 @@ def swap_searcher(message):
         bot.send_message(message.chat.id, f"сменено на {searcher}") 
     else:
        bot.send_message(message.chat.id, f"неизвестное имя") 
+       
+@bot.message_handler(commands=['translate'])
+def translate(message):
+    logging(message.chat.id, message.text)
+    if " " in message.text:
+        command, searcher = message.text.split(maxsplit=1)
+    else:
+        bot.send_message(message.chat.id, f"Введите слово или фразу")
+        return
     
+    translate = translator.translate(searcher, dest='ru').text
+    bot.reply_to(message, translate)
 
 @bot.message_handler(content_types=['text'])
 def question(message):
