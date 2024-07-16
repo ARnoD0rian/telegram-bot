@@ -1,3 +1,3 @@
 ##  Рекомендации для пользователя
 
-![recomendations](link)
+![recomendations](https://github.com/ARnoD0rian/telegram-bot/blob/main/README/readme.png)
