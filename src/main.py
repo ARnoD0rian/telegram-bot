@@ -95,13 +95,13 @@ def swap_searcher(message):
        
 @bot.message_handler(commands=['translate'])
 def translate(message):
+    print(message)
     logging(message.chat.id, message.text)
     if " " in message.text:
         command, searcher = message.text.split(maxsplit=1)
     else:
         bot.send_message(message.chat.id, f"Введите слово или фразу")
         return
-    
     translate = translator.translate(searcher, dest='ru').text
     bot.reply_to(message, translate)
 

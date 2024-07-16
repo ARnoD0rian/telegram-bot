@@ -1,0 +1,2 @@
+TOKEN = None
+API_WEATHER = None
